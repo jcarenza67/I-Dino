@@ -4,9 +4,22 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Oh No Dino</title>
 </head>
 <body>
-  
+  <div class="container">
+    <h1 class="text-center my-4">Oh No Dino</h1>
+    <div id="dino-output"></div>
+    <div class="input-group my-3">
+      <input type="text" class="form-control" id="user-input" placeholder="Enter your guess">
+      <button class="btn btn-outline-secondary" type="button" id="submit-guess">Submit</button>
+    </div>
+    <div id="remaining-guesses" class="text-center mb-2"></div>
+    <div id="incorrect-guesses" class="text-center mb-2"></div>
+    <div id="game-result" class="text-center mb-2"></div>
+    <button id="hint" class="btn btn-outline-secondary">Hint</button>
+    <p id="hint-message"></p>
+    <button id="reset" class="btn btn-outline-secondary">New Game</button>
+  </div>
 </body>
 </html>

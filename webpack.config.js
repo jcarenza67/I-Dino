@@ -7,11 +7,11 @@ module.exports = {
   entry: './src/index.js',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
   },
   devtool: 'eval-source-map',
-  devServer: {               
-    contentBase: './dist'    
+  devServer: {
+    contentBase: './dist',
   },
   plugins: [
     new ESLintPlugin(),
@@ -19,18 +19,23 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Random Dino',
       template: './src/index.html',
-      inject: 'body'
-    })
+      inject: 'body',
+    }),
   ],
   module: {
     rules: [
       {
         test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
         use: [
-          'style-loader',
-          'css-loader'
-        ]
-      }
-    ]
-  }
+          {
+            loader: 'file-loader',
+          },
+        ],
+      },
+    ],
+  },
 };
